@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout layout1 = null;
     Button ClickMe = null;
     int buttonNumber = 1;
-    ScrollView scrollView = null;
     LinearLayout layout2 = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         this.layout1 = (LinearLayout)findViewById(R.id.layout1);
         this.ClickMe = (Button)findViewById(R.id.button);
-        this.scrollView = (ScrollView)findViewById(R.id.scrollView);
         this.layout2 = (LinearLayout)findViewById(R.id.layout2);
         // TO-DO:
         // 1. Create a reference to the main layout.
