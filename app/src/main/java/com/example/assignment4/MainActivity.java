@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Button ClickMe = null;
     int buttonNumber = 1;
     LinearLayout layout2 = null;
+    Button buttonName = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +29,11 @@ public class MainActivity extends AppCompatActivity {
         this.layout1 = (LinearLayout)findViewById(R.id.layout1);
         this.ClickMe = (Button)findViewById(R.id.button);
         this.layout2 = (LinearLayout)findViewById(R.id.layout2);
+        this.buttonName = ClickMe;
         // TO-DO:
         // 1. Create a reference to the main layout.
         // 2. Create a reference to the start button and make the callback.
-        ClickMe.setOnClickListener(new View.OnClickListener() {
+        buttonName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 generateNewButton();
@@ -41,15 +43,17 @@ public class MainActivity extends AppCompatActivity {
     private void generateNewButton() {
             // Generates a new Button widget dynamically.
         Button newButton = new Button(MainActivity.this);
-            // 1. Set the layout params
+                                                            // 1. Set the layout params
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT);
-        newButton.setTextColor(getRandomColor());// 2. Create the button and define the look (i.e. text, text, color, etc.)
+        newButton.setTextColor(getRandomColor());
         buttonNumber++;
-        newButton.setText("Button Number: " + buttonNumber);
-            // 3. Create a callback that will generate another widget.
-            // 4. Disable the last button.
-        layout2.addView(newButton); // 5. Add the Button to the current view.
+        newButton.setText("Button Number: " + buttonNumber);// 2. Create the button and define the look (i.e. text, text, color, etc.)
+                                                            // 3. Create a callback that will generate another widget.
+                                                            // 4. Disable the last button.
+        buttonName.setClickable(false);
+        this.buttonName = newButton;
+        layout2.addView(newButton);                         // 5. Add the Button to the current view.
     }
     private int getRandomColor() {
         Random rnd = new Random();
