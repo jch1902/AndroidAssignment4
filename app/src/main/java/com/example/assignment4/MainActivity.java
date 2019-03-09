@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 LinearLayout.LayoutParams.WRAP_CONTENT);
         newButton.setTextColor(getRandomColor());
         buttonNumber++;
-        newButton.setText("Button Number: " + buttonNumber);// 2. Create the button and define the look (i.e. text, text, color, etc.)
+        newButton.setText("Button Number: " + buttonNumber);
+        newButton.setLayoutParams(layoutParams);            // 2. Create the button and define the look (i.e. text, text, color, etc.)
                                                             // 3. Create a callback that will generate another widget.
                                                             // 4. Disable the last button.
         buttonName.setClickable(false);
