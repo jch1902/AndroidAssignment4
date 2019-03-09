@@ -54,7 +54,15 @@ public class MainActivity extends AppCompatActivity {
                                                             // 4. Disable the last button.
         buttonName.setClickable(false);
         this.buttonName = newButton;
-        layout2.addView(newButton);                         // 5. Add the Button to the current view.
+        buttonName.setClickable(true);
+        layout2.addView(newButton);
+        buttonName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                generateNewButton();
+            }
+        });
+        // 5. Add the Button to the current view.
     }
     private int getRandomColor() {
         Random rnd = new Random();
